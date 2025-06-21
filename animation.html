@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Animations Demo - Skiddy Agency</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+    header {
+      background-color: #111827;
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+      animation: slideDown 1s ease-out;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    header p {
+      color: #cbd5e1;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+      gap: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .card:hover {
+      transform: scale(1.05) rotate(1deg);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.1);
+      background-color: #e0f2fe;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      60% {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+      80% {
+        transform: scale(0.95);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .bounce {
+      animation: bounceIn 1.2s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Skiddy Animations</h1>
+    <p>Hover over the cards and watch the magic happen!</p>
+  </header>
+
+  <section class="cards">
+    <div class="card">
+      <h2>Fade In Up</h2>
+      <p>This card appears with a smooth upward fade.</p>
+    </div>
+    <div class="card">
+      <h2>Hover Effect</h2>
+      <p>Watch it lift up and glow when hovered!</p>
+    </div>
+    <div class="card">
+      <h2>CSS Power</h2>
+      <p>Powered by keyframes and transitions.</p>
+    </div>
+    <div class="card bounce">
+      <h2>Bounce In</h2>
+      <p>This card uses a bounce-in animation on load.</p>
+    </div>
+    <div class="card">
+      <h2>Scale & Rotate</h2>
+      <p>Hover to see scale and rotation effects combined.</p>
+    </div>
+    <div class="card bounce">
+      <h2>Fun Entry</h2>
+      <p>Creative animations for interactive UI designs.</p>
+    </div>
+  </section>
+</body>
+</html>
